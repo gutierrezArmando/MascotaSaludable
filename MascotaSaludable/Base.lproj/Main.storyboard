@@ -28,6 +28,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-mi-WHZ">
+                                <rect key="frame" x="16" y="617" width="343" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Cerrar Sesion">
+                                    <color key="titleColor" red="0.52216637129999999" green="0.2649259269" blue="0.18289735909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCerrarClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Keo-Fl-YUN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -41,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="wCa-lw-Wrr">
             <objects>
-                <viewController id="7C8-ic-MZt" sceneMemberID="viewController">
+                <viewController id="7C8-ic-MZt" customClass="LoginViewController" customModule="MascotaSaludable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aRO-kl-lbu"/>
                         <viewControllerLayoutGuide type="bottom" id="GWD-7c-l7O"/>
@@ -90,7 +101,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ket-dv-Z34">
                                                 <rect key="frame" x="54" y="181" width="235" height="39"/>
@@ -100,6 +111,9 @@
                                                 <state key="normal" title="Ingresar">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnIngresarClick:" destination="7C8-ic-MZt" eventType="touchUpInside" id="Cnv-TL-Wf9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yh-se-fWT">
                                                 <rect key="frame" x="192" y="254" width="97" height="30"/>
@@ -131,6 +145,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="textFieldCorreo" destination="WOj-7a-zz2" id="fki-0p-31h"/>
+                        <outlet property="textFieldPassword" destination="WOG-gb-Zn0" id="bfh-rT-aHi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aml-IM-7Is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

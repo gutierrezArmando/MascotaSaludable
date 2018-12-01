@@ -33,7 +33,7 @@ class RegistroViewController: UIViewController {
         
         if camposValidos(correo: correo, password: password, rePassword: rePassword) {
             if passwordsVerificados(password: password, rePassword: rePassword) {
-                agregarUsuario(correo: correo, password: password, rePassword: rePassword)
+                agregarUsuario(correo: correo, password: password)
 
                 let alertController = UIAlertController(title: "Confirmacion", message: "Usuario Agregado", preferredStyle: UIAlertControllerStyle.alert)
                 
@@ -73,8 +73,13 @@ class RegistroViewController: UIViewController {
         return true
     }
     
-    func agregarUsuario(correo: String, password: String, rePassword: String) {
-        print("Agrega Usuario")
+    func agregarUsuario(correo: String, password: String) {
+        UserDefaults.standard.set(correo, forKey: "userEmail")
+        UserDefaults.standard.set(password, forKey: "userPassword")
+        print("Usuario Creado")
+        //print(UserDefaults.standard.string(forKey: "userName") ?? "")
+        //UserDefaults.standard.removeObject(forKey: "userName")
+        //UserDefaults.standard.removeObject(forKey: "password")
     }
     
     func showMessageBox(title: String, message: String) {

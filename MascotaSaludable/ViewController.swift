@@ -31,9 +31,17 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)        }
     }*/
     
+    @IBAction func btnCerrarClick(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "userLogged")
+        self.performSegue(withIdentifier: "viewLogin", sender: self)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.performSegue(withIdentifier: "viewLogin", sender: self)
+        let userLogged: Bool = UserDefaults.standard.bool(forKey: "userLogged")
+        if !userLogged {
+            self.performSegue(withIdentifier: "viewLogin", sender: self)
+        }
     }
 
 }
