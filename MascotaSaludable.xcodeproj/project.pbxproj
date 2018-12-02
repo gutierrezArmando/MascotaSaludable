@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A09129921B1CE820084252B /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09129821B1CE820084252B /* RegistroViewController.swift */; };
+		2A175D9A21B4A1DB00E6EF48 /* Mascota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A175D9921B4A1DB00E6EF48 /* Mascota.swift */; };
 		2A30A2CA21A8FBF20062D637 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30A2C921A8FBF20062D637 /* AppDelegate.swift */; };
 		2A30A2CC21A8FBF20062D637 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30A2CB21A8FBF20062D637 /* ViewController.swift */; };
 		2A30A2CF21A8FBF20062D637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A30A2CD21A8FBF20062D637 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		2A09129821B1CE820084252B /* RegistroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		2A175D9921B4A1DB00E6EF48 /* Mascota.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mascota.swift; sourceTree = "<group>"; };
 		2A30A2C621A8FBF20062D637 /* MascotaSaludable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MascotaSaludable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A30A2C921A8FBF20062D637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A30A2CB21A8FBF20062D637 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				2A09129821B1CE820084252B /* RegistroViewController.swift */,
 				2A3EEE8021B30D300026F4C3 /* LoginViewController.swift */,
 				2A3EEE8221B3BD380026F4C3 /* AgregarMascotaViewController.swift */,
+				2A175D9921B4A1DB00E6EF48 /* Mascota.swift */,
 			);
 			path = MascotaSaludable;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				2A3EEE8121B30D300026F4C3 /* LoginViewController.swift in Sources */,
 				2A30A2CC21A8FBF20062D637 /* ViewController.swift in Sources */,
 				2A09129921B1CE820084252B /* RegistroViewController.swift in Sources */,
+				2A175D9A21B4A1DB00E6EF48 /* Mascota.swift in Sources */,
 				2A30A2CA21A8FBF20062D637 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
