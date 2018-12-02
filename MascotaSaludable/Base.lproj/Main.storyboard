@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,66 +21,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-Tn-rWz">
-                                <rect key="frame" x="16" y="64" width="343" height="108"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-zF-EZX">
+                                <rect key="frame" x="0.0" y="64" width="229" height="603"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp3-gm-hjD">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="36"/>
-                                        <color key="backgroundColor" red="0.72336632010000002" green="0.098289256620000001" blue="0.049420000659999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Menu">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="menuPresionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LaK-ix-HgM"/>
-                                        </connections>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZK-we-0bO">
-                                        <rect key="frame" x="0.0" y="36" width="343" height="36"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7W-75-Ctl">
+                                        <rect key="frame" x="40" y="85" width="148" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Agregar Mascota">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPg-mi-WHZ">
-                                        <rect key="frame" x="0.0" y="72" width="343" height="36"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Cerrar Sesion">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.72336632010000002" green="0.098289256620000001" blue="0.049420000659999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="btnCerrarClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Keo-Fl-YUN"/>
+                                            <segue destination="XKz-sL-9jS" kind="show" id="CJh-Bf-GyS"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mis Mascotas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3k-R8-tHp">
-                                <rect key="frame" x="91" y="219" width="193" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="riO-aW-1XN"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.52216637129999999" green="0.2649259269" blue="0.18289735909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="23Z-Tn-rWz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4lI-is-oQK"/>
-                            <constraint firstItem="23Z-Tn-rWz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jec-np-XkP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="23Z-Tn-rWz" secondAttribute="trailing" id="rrr-6w-ODE"/>
+                            <constraint firstItem="aSN-zF-EZX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-229" id="7Te-p1-6c1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aSN-zF-EZX" secondAttribute="bottom" id="MLe-hu-DKE"/>
+                            <constraint firstItem="aSN-zF-EZX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iVg-Gm-6Le"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mascota Saludable" id="Yh6-wX-gTw"/>
+                    <navigationItem key="navigationItem" title="Mascota Saludable" id="Yh6-wX-gTw">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="bookmarks" id="yj5-pe-v9Z">
+                            <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="openCloseMenu:" destination="BYZ-38-t0r" id="shN-ko-eqS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outletCollection property="opcionesMenu" destination="lZK-we-0bO" collectionClass="NSMutableArray" id="S0N-x5-Le4"/>
-                        <outletCollection property="opcionesMenu" destination="vPg-mi-WHZ" collectionClass="NSMutableArray" id="hbH-O5-OhR"/>
+                        <outlet property="leadingConstraint" destination="7Te-p1-6c1" id="sFm-Ak-Hhw"/>
+                        <outlet property="menuView" destination="aSN-zF-EZX" id="Thu-cP-Z8I"/>
                         <segue destination="7C8-ic-MZt" kind="presentation" identifier="viewLogin" id="qlE-Et-caM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840.79999999999995" y="122.78860569715144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="smg-sN-MeM">
+            <objects>
+                <viewController id="XKz-sL-9jS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FXw-5x-3CJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="L0F-Rt-qte"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hru-Vv-U34">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agregar Mascota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-JH-Be3">
+                                <rect key="frame" x="62" y="93" width="250" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BsZ-5s-sRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="820.83958020989508"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="wCa-lw-Wrr">

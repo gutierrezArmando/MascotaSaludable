@@ -11,11 +11,20 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet var opcionesMenu: [UIButton]!
-
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var menuView: UIView!
+    
+    
+    var menuShowing : Bool = false
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        menuView.layer.shadowOpacity = 1
+        menuView.layer.shadowRadius = 6
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,10 +43,6 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)        }
     }*/
     
-    @IBAction func btnCerrarClick(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "userLogged")
-        self.performSegue(withIdentifier: "viewLogin", sender: self)
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -47,16 +52,15 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func menuPresionado(_ sender: UIButton) {
-        opcionesMenu.forEach{
-            (button) in UIView.animate(withDuration: 0.3, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+    
+    @IBAction func openCloseMenu(_ sender: Any) {
+        
+        leadingConstraint.constant = menuShowing ? -229: 0
+        menuShowing = !menuShowing
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
-    
-    
-
 }
 
