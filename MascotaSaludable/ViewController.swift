@@ -31,18 +31,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    @IBAction func pressAccessButton(_ sender: Any) {
-        
-        if txtUsuario.text == txtPassword.text {
-            let alertController = UIAlertController(title: "iOScreator", message:
-                "Hello, world!", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)        }
-    }*/
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -61,6 +49,12 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
+    }
+    
+    
+    @IBAction func logOut(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "userLogged")
+        self.performSegue(withIdentifier: "viewLogin", sender: self)
     }
 }
 

@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="64" width="229" height="603"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7W-75-Ctl">
-                                        <rect key="frame" x="40" y="85" width="148" height="30"/>
+                                        <rect key="frame" x="40" y="134" width="148" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Agregar Mascota">
@@ -33,6 +33,17 @@
                                         </state>
                                         <connections>
                                             <segue destination="XKz-sL-9jS" kind="show" id="CJh-Bf-GyS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdV-Qp-EnZ">
+                                        <rect key="frame" x="40" y="172" width="148" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Cerrar Sesion">
+                                            <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MBm-pU-dd6"/>
                                         </connections>
                                     </button>
                                 </subviews>
