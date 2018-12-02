@@ -51,10 +51,20 @@ class ViewController: UIViewController {
         })
     }
     
-    
     @IBAction func logOut(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "userLogged")
         self.performSegue(withIdentifier: "viewLogin", sender: self)
     }
+    
+    @IBAction func hideMenu(_ sender: Any) {
+        leadingConstraint.constant = menuShowing ? -229: 0
+        menuShowing = !menuShowing
+        
+        //UIView.animate(withDuration: 0.3, animations: {
+        //    self.view.layoutIfNeeded()
+        //})
+    }
+    
+    
 }
 
