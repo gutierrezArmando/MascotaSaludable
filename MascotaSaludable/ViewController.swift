@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet var opcionesMenu: [UIButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,17 @@ class ViewController: UIViewController {
             self.performSegue(withIdentifier: "viewLogin", sender: self)
         }
     }
+    
+    @IBAction func menuPresionado(_ sender: UIButton) {
+        opcionesMenu.forEach{
+            (button) in UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    
 
 }
 
