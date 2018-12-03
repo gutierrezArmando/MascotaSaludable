@@ -114,5 +114,16 @@ class MascotaTableViewController: UITableViewController {
         
         mascotas += [mascota01, mascota02]
     }
+    
+    @IBAction func unwindToPetsList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AgregarMascotaViewController, let mascota = sourceViewController.mascota {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: mascotas.count, section: 0)
+            
+            mascotas.append(mascota)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
 
 }

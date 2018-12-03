@@ -15,7 +15,7 @@ class Mascota: NSObject, NSCoding {
     
     // MARK: Archiving Paths
     static var DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendPathComponent("mascotas")
+    static var ArchiveURL = DocumentsDirectory.appendPathComponent("mascotas")
     var nombre: String
     var foto: UIImage?
     var fechaNacimiento: String

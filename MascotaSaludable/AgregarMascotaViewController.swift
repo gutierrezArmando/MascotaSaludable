@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class AgregarMascotaViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -16,7 +17,12 @@ class AgregarMascotaViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var textFieldPropietario: UITextField!
     @IBOutlet weak var textFieldPeso: UITextField!
     
+    var mascota: Mascota?
+    
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +39,11 @@ class AgregarMascotaViewController: UIViewController, UIImagePickerControllerDel
         let nombre: String = textFieldNombre.text!
         let propietario: String = textFieldPropietario.text!
         let peso: String = textFieldPeso.text!
+        let foto: UIImage = photoImageView.image!
         if !camposLlenos(nombre: nombre, propietario: propietario, peso: peso) {
             showMessageBox(title: "Error", message: "Falta uno o mas parametros")
         } else {
-            agregarMascota(nombre: nombre, fecha: getDateFormat(), propietario: propietario, peso: peso)
+            agregarMascota(nombre: nombre, foto: foto, fecha: getDateFormat(), propietario: propietario, peso: peso)
             showMessageBox(title: "Confirmacion", message: "Mascota Agregada")
             limpiarCampos()
         }
@@ -49,7 +56,8 @@ class AgregarMascotaViewController: UIViewController, UIImagePickerControllerDel
         return true
     }
     
-    func agregarMascota(nombre: String, fecha: String, propietario: String, peso: String) {
+    func agregarMascota(nombre: String, foto: UIImage, fecha: String, propietario: String, peso: String) {
+        mascota = Mascota(nombre: nombre, foto: foto, fechaNacimiento: fecha, propietario: propietario, peso: peso, comentarios: "")
         print("Mascota agregada:\n\(nombre)\n\(fecha)\n\(propietario)\n\(peso)\n")
     }
     
@@ -114,5 +122,24 @@ class AgregarMascotaViewController: UIViewController, UIImagePickerControllerDel
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        let nombre: String = textFieldNombre.text!
+        let propietario: String = textFieldPropietario.text!
+        let peso: String = textFieldPeso.text!
+        let foto: UIImage = photoImageView.image!
+        let fecha: String = getDateFormat()
+        agregarMascota(nombre: nombre, foto: foto, fecha: fecha, propietario: propietario, peso: peso)
+
+    }
+    
+    @IBAction func cancelar(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
 }
