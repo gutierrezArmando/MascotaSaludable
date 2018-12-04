@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 
-class Mascota: NSObject, NSCoding {
+//class Mascota: NSObject, NSCoding {
+class Mascota {
     
     //MARK: atributos
     
     // MARK: Archiving Paths
-    static var DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static var ArchiveURL = DocumentsDirectory.appendPathComponent("mascotas")
+//    static var DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+//    static var ArchiveURL = DocumentsDirectory.appendPathComponent("mascotas")
     var nombre: String
     var foto: UIImage?
     var fechaNacimiento: String
@@ -24,7 +25,7 @@ class Mascota: NSObject, NSCoding {
     var comentarios: String
     
     // MARK: Types
-    struct PropertyKey {
+/*    struct PropertyKey {
         static let nameKey = "nombre"
         static let photoKey = "foto"
         static let dateKey = "fechaNacimiento"
@@ -32,7 +33,7 @@ class Mascota: NSObject, NSCoding {
         static let weightKey = "peso"
         static let commentsKey = "comentarios"
     }
-    
+*/
     init(nombre: String, foto: UIImage?, fechaNacimiento: String, propietario: String, peso: String, comentarios: String) {
         self.nombre = nombre
         self.foto = foto
@@ -40,10 +41,12 @@ class Mascota: NSObject, NSCoding {
         self.propietario = propietario
         self.peso = peso
         self.comentarios = comentarios
-        
-        super.init()
     }
     
+    func actualizarComentarios(comentarioNuevo: String) {
+        self.comentarios = comentarioNuevo
+    }
+/*
     // MARK: NSCoding
     func encode(with aCoder: NSCoder) {
         aCoder.encode(nombre, forKey: PropertyKey.nameKey)
@@ -65,5 +68,5 @@ class Mascota: NSObject, NSCoding {
         self.init(nombre: nombre, foto: foto, fechaNacimiento: fecha, propietario: propietario, peso: peso, comentarios: comentarios)
         
     }
-    
+  */
 }

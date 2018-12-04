@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -123,6 +124,7 @@
                                 <connections>
                                     <outlet property="lblNombre" destination="VzC-6K-r7x" id="9eQ-jt-v4P"/>
                                     <outlet property="photoImageView" destination="WsC-IY-2b9" id="bMg-5J-S1l"/>
+                                    <segue destination="ZTS-IQ-3ok" kind="show" identifier="ShowDetail" id="OcP-4B-ugH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -134,7 +136,7 @@
                     <navigationItem key="navigationItem" title="MIS MASCOTAS" id="dH4-wH-MSM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rn4-cO-fKQ">
                             <connections>
-                                <segue destination="Pn0-Wx-FiP" kind="show" id="1DO-7g-yv8"/>
+                                <segue destination="Pn0-Wx-FiP" kind="presentation" identifier="addItem" id="1DO-7g-yv8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -211,15 +213,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-EA-XR6">
-                                <rect key="frame" x="123" y="609" width="129" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Aceptar"/>
-                                <connections>
-                                    <action selector="btnAceptarClick:" destination="XKz-sL-9jS" eventType="touchUpInside" id="Uev-uq-O0C"/>
-                                </connections>
-                            </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hUo-io-Ip1">
                                 <rect key="frame" x="42" y="390" width="290" height="101"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -514,6 +507,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18e-Zw-hkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2735.1999999999998" y="820.83958020989508"/>
+        </scene>
+        <!--Detalles Mascota View Controller-->
+        <scene sceneID="Jor-PP-64a">
+            <objects>
+                <viewController id="ZTS-IQ-3ok" customClass="DetallesMascotaViewController" customModule="MascotaSaludable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h0d-CR-dXF"/>
+                        <viewControllerLayoutGuide type="bottom" id="PSQ-5i-15G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HT2-AD-2Dq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KpP-nr-0hf">
+                                <rect key="frame" x="16" y="64" width="343" height="497"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3Z-dY-Vwd">
+                                        <rect key="frame" x="118.5" y="0.0" width="106.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NLf-ot-g6g">
+                                        <rect key="frame" x="75.5" y="36" width="192.5" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="4jr-8X-oML"/>
+                                            <constraint firstAttribute="width" constant="192" id="YC3-lE-Nkr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha Nacimiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-OX-lTj">
+                                        <rect key="frame" x="10" y="186" width="323" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Propietario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLi-3v-vx5">
+                                        <rect key="frame" x="10" y="209" width="323" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwU-gZ-Wo4">
+                                        <rect key="frame" x="10" y="232" width="323" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comentarios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Neu-dm-B0S">
+                                        <rect key="frame" x="117" y="255" width="109" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Amt-S7-snP">
+                                        <rect key="frame" x="50.5" y="278" width="242" height="219"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="242" id="dGw-GE-jcu"/>
+                                            <constraint firstAttribute="height" constant="219" id="vgg-Ns-kMw"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vLi-3v-vx5" firstAttribute="leading" secondItem="KpP-nr-0hf" secondAttribute="leading" constant="10" id="f94-s9-w5y"/>
+                                    <constraint firstItem="OwU-gZ-Wo4" firstAttribute="leading" secondItem="KpP-nr-0hf" secondAttribute="leading" constant="10" id="fZr-4k-eeq"/>
+                                    <constraint firstItem="WDd-OX-lTj" firstAttribute="leading" secondItem="KpP-nr-0hf" secondAttribute="leading" constant="10" id="qdG-nr-2Qr"/>
+                                </constraints>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8vp-lS-Mfd">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Guardar" id="Wgy-gE-Vcv">
+                                        <connections>
+                                            <segue destination="ms8-pm-c3f" kind="unwind" unwindAction="unwindToPetsListWithSender:" id="ht5-Bc-K5m"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KpP-nr-0hf" firstAttribute="leading" secondItem="HT2-AD-2Dq" secondAttribute="leadingMargin" id="6PF-dn-Ifz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KpP-nr-0hf" secondAttribute="trailing" id="iLC-42-9a6"/>
+                            <constraint firstItem="KpP-nr-0hf" firstAttribute="top" secondItem="h0d-CR-dXF" secondAttribute="bottom" id="n0l-D5-ug3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgFoto" destination="NLf-ot-g6g" id="KOa-bK-roX"/>
+                        <outlet property="lblFecha" destination="WDd-OX-lTj" id="ELW-4W-Z1V"/>
+                        <outlet property="lblNombre" destination="P3Z-dY-Vwd" id="u7G-s3-mEj"/>
+                        <outlet property="lblPeso" destination="OwU-gZ-Wo4" id="HOg-nY-q5b"/>
+                        <outlet property="lblPropietario" destination="vLi-3v-vx5" id="Yo0-tC-JC9"/>
+                        <outlet property="saveButton" destination="Wgy-gE-Vcv" id="oit-FK-9Kg"/>
+                        <outlet property="txtComentarios" destination="Amt-S7-snP" id="u9h-w8-5xB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25x-Bb-WWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ms8-pm-c3f" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2733.5999999999999" y="1530.5847076461771"/>
         </scene>
     </scenes>
     <resources>

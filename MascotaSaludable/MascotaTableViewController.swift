@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class MascotaTableViewController: UITableViewController {
 
@@ -118,11 +119,49 @@ class MascotaTableViewController: UITableViewController {
     @IBAction func unwindToPetsList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? AgregarMascotaViewController, let mascota = sourceViewController.mascota {
             
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: mascotas.count, section: 0)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                mascotas[selectedIndexPath.row] = mascota
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                // Add a new meal.
+                let newIndexPath = IndexPath(row: mascotas.count, section: 0)
+                
+                mascotas.append(mascota)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)            }
             
-            mascotas.append(mascota)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "AddItem":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail":
+            guard let petDetailViewController = segue.destination as? DetallesMascotaViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedMealCell = sender as? MascotaTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedPet = mascotas[indexPath.row]
+            petDetailViewController.mascota = selectedPet
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
     }
 

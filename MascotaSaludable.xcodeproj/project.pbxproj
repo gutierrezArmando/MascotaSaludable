@@ -16,6 +16,7 @@
 		2A30A2CF21A8FBF20062D637 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A30A2CD21A8FBF20062D637 /* Main.storyboard */; };
 		2A30A2D121A8FBF20062D637 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A30A2D021A8FBF20062D637 /* Assets.xcassets */; };
 		2A30A2D421A8FBF20062D637 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A30A2D221A8FBF20062D637 /* LaunchScreen.storyboard */; };
+		2A314CCE21B5EE020028B8F2 /* DetallesMascotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A314CCD21B5EE020028B8F2 /* DetallesMascotaViewController.swift */; };
 		2A3EEE8121B30D300026F4C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EEE8021B30D300026F4C3 /* LoginViewController.swift */; };
 		2A3EEE8321B3BD380026F4C3 /* AgregarMascotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3EEE8221B3BD380026F4C3 /* AgregarMascotaViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		2A30A2D021A8FBF20062D637 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A30A2D321A8FBF20062D637 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A30A2D521A8FBF20062D637 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A314CCD21B5EE020028B8F2 /* DetallesMascotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetallesMascotaViewController.swift; sourceTree = "<group>"; };
 		2A3EEE8021B30D300026F4C3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2A3EEE8221B3BD380026F4C3 /* AgregarMascotaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgregarMascotaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				2A175D9921B4A1DB00E6EF48 /* Mascota.swift */,
 				2A175D9B21B4B2DF00E6EF48 /* MascotaTableViewCell.swift */,
 				2A175D9D21B4C04400E6EF48 /* MascotaTableViewController.swift */,
+				2A314CCD21B5EE020028B8F2 /* DetallesMascotaViewController.swift */,
 			);
 			path = MascotaSaludable;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				2A175D9E21B4C04400E6EF48 /* MascotaTableViewController.swift in Sources */,
 				2A09129921B1CE820084252B /* RegistroViewController.swift in Sources */,
 				2A175D9A21B4A1DB00E6EF48 /* Mascota.swift in Sources */,
+				2A314CCE21B5EE020028B8F2 /* DetallesMascotaViewController.swift in Sources */,
 				2A30A2CA21A8FBF20062D637 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
