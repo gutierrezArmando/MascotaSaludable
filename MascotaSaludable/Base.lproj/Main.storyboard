@@ -25,18 +25,22 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-zF-EZX">
                                 <rect key="frame" x="0.0" y="64" width="229" height="603"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7W-75-Ctl">
-                                        <rect key="frame" x="40" y="134" width="148" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9R-B2-NXj">
+                                        <rect key="frame" x="40" y="211" width="148" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Agregar Mascota">
+                                        <state key="normal" title="Mis mascotas">
                                             <color key="titleColor" red="0.72336632010000002" green="0.098289256620000001" blue="0.049420000659999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="hideMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YfF-bE-4qz"/>
-                                            <segue destination="Pn0-Wx-FiP" kind="show" id="CJh-Bf-GyS"/>
+                                            <action selector="hideMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hil-Q7-TVi"/>
+                                            <segue destination="bzm-Ca-Knp" kind="show" id="dAq-RY-tbs"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-Un-qHh">
+                                        <rect key="frame" x="8" y="24" width="213" height="134"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdV-Qp-EnZ">
                                         <rect key="frame" x="40" y="249" width="148" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,18 +50,6 @@
                                         </state>
                                         <connections>
                                             <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MBm-pU-dd6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9R-B2-NXj">
-                                        <rect key="frame" x="40" y="188" width="148" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Mis mascotas">
-                                            <color key="titleColor" red="0.72336632010000002" green="0.098289256620000001" blue="0.049420000659999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="hideMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hil-Q7-TVi"/>
-                                            <segue destination="bzm-Ca-Knp" kind="show" id="dAq-RY-tbs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -668,7 +660,4 @@
         <image name="defaultPhoto" width="100" height="100"/>
         <image name="logo" width="442" height="296"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="1DO-7g-yv8"/>
-    </inferredMetricsTieBreakers>
 </document>
