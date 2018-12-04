@@ -16,7 +16,17 @@ class MascotaTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-        loadSimplePets()
+        
+        
+        //loadSamplePets()
+        
+        if let savedPets = loadPets() {
+            mascotas += savedPets
+        }
+        else {
+            // Load the sample data.
+            loadSamplePets()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -73,6 +83,7 @@ class MascotaTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             mascotas.remove(at: indexPath.row)
+            savePets()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -107,7 +118,7 @@ class MascotaTableViewController: UITableViewController {
     
     // MARK: Private methods
     
-    private func loadSimplePets(){
+    private func loadSamplePets(){
         let photo1 = UIImage(named: "mascotaSample01")!
         let photo2 = UIImage(named: "mascotaSample02")!
         
@@ -131,11 +142,10 @@ class MascotaTableViewController: UITableViewController {
                 let newIndexPath = IndexPath(row: mascotas.count, section: 0)
                 
                 mascotas.append(mascota)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)            }
-            
-
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            savePets()
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -167,4 +177,17 @@ class MascotaTableViewController: UITableViewController {
         }
     }
 
+    // MARK: NSCoding
+    private func savePets() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(mascotas, toFile: Mascota.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadPets() -> [Mascota]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Mascota.ArchiveURL.path) as? [Mascota]
+    }
 }
