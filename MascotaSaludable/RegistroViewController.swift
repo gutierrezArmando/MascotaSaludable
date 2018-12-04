@@ -90,4 +90,7 @@ class RegistroViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 
+    @IBAction func cancelarRegistro(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }

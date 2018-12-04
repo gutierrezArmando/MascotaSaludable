@@ -155,6 +155,9 @@ class MascotaTableViewController: UITableViewController {
             
         case "AddItem":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+        
+        case "ReturnHome":
+            os_log("Return to home.", log: OSLog.default, type: .debug)
             
         case "ShowDetail":
             guard let petDetailViewController = segue.destination as? DetallesMascotaViewController else {
@@ -190,4 +193,5 @@ class MascotaTableViewController: UITableViewController {
     private func loadPets() -> [Mascota]?  {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Mascota.ArchiveURL.path) as? [Mascota]
     }
+    
 }
