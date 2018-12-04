@@ -136,7 +136,7 @@
                     <navigationItem key="navigationItem" title="MIS MASCOTAS" id="dH4-wH-MSM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rn4-cO-fKQ">
                             <connections>
-                                <segue destination="Pn0-Wx-FiP" kind="presentation" identifier="addItem" id="1DO-7g-yv8"/>
+                                <segue destination="Pn0-Wx-FiP" kind="presentation" identifier="AddItem" id="1DO-7g-yv8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
